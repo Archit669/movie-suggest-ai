@@ -10,8 +10,8 @@ function MovieDetails() {
   const releaseDate = new Date(movie.released).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
   const handleImageError = (event) => {
-    event.target.onerror = null; // Prevent infinite loop
-    event.target.src = '/no-poster.png';
+    event?.target?.onerror = null; // Prevent infinite loop
+    event?.target?.src = '/no-poster.png';
   };
 
   return (
@@ -26,7 +26,7 @@ function MovieDetails() {
             </div>
         </div>
         <div className="w-full lg:w-1/2 mt-6 lg:mt-0 text-white">
-            <h2 className="text-3xl font-semibold mb-4">{movie.title}</h2>
+            <h2 className="text-3xl font-semibold mb-4">{movie?.title}</h2>
             
             <div className="flex flex-wrap mb-4">
             <p className="mr-4">Genres:</p>
@@ -37,17 +37,17 @@ function MovieDetails() {
             </div>
             </div>
             <div className="mb-4">
-            <p><span className="font-semibold">Overview:</span> {movie.plot}</p>
+            <p><span className="font-semibold">Overview:</span> {movie?.plot}</p>
             </div>
             <div className="mb-4">
             <p><span className="font-semibold">Release Date:</span> {releaseDate}</p>
-            <p><span className="font-semibold">Runtime:</span> {movie.runtime} min</p>
+            <p><span className="font-semibold">Runtime:</span> {movie?.runtime} min</p>
             </div>
             <div className="mb-4">
-            <p><span className="font-semibold">Directors:</span> {movie.directors.join(', ')}</p>
+            <p><span className="font-semibold">Directors:</span> {movie.directors?.join(', ')}</p>
             </div>
             <div>
-            <p><span className="font-semibold">Writers:</span> {movie.writers.join(', ')}</p>
+            <p><span className="font-semibold">Writers:</span> {movie.writers?.join(', ')}</p>
             </div>
         </div>
         </div>
