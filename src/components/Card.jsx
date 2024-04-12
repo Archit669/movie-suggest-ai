@@ -11,10 +11,10 @@ function Card({movie}) {
     const title = movie.title;
     const releaseDate = new Date(movie.released).toLocaleDateString('en-US', {month: 'short', day: 'numeric', year: 'numeric'});
 
-    const handleImageError = (event) => {
-      event.target.onerror = null; // Prevent infinite loop
-      event.target.src = 'src/assets/no-poster.png';
-    };
+    // const handleImageError = (event) => {
+    //   event.target.onerror = null; // Prevent infinite loop
+    //   event.target.src = 'src/assets/no-poster.png';
+    // };
     
   return (
 
@@ -25,7 +25,7 @@ function Card({movie}) {
                 <img 
                 src={!posterUrl ? "" : posterUrl} 
                 className='object-cover h-full w-full rounded-xl'
-                onError={handleImageError}
+                // onError={handleImageError}
                 />
                 <CircleRating rating={rating}></CircleRating>
             </div>
