@@ -9,6 +9,10 @@ function MovieDetails() {
   const genres = movie.genres;
   const releaseDate = new Date(movie.released).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
+  const handleImageError = (event) => {
+    event.target.onerror = null; // Prevent infinite loop
+    event.target.src = '/no-poster.png';
+  };
 
   return (
     <div className='mt-[2rem]'>
@@ -17,7 +21,8 @@ function MovieDetails() {
         <div className="w-full lg:w-1/3 lg:mr-12">
             <div className="img-container">
               <img src={!posterUrl ? '/no-poster.png' : posterUrl}
-              className="rounded-lg shadow-lg text-white" />
+              className="rounded-lg shadow-lg text-white"
+              onError={handleImageError}/>
             </div>
         </div>
         <div className="w-full lg:w-1/2 mt-6 lg:mt-0 text-white">
