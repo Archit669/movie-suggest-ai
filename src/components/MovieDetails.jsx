@@ -44,10 +44,10 @@ function MovieDetails() {
             <p><span className="font-semibold">Runtime:</span> {movie?.runtime} min</p>
             </div>
             <div className="mb-4">
-            <p><span className="font-semibold">Directors:</span> {movie.directors?.join(', ')}</p>
+            <p><span className="font-semibold">Directors:</span> {movie?.directors?.join(', ')}</p>
             </div>
             <div>
-            <p><span className="font-semibold">Writers:</span> {movie.writers?.join(', ')}</p>
+            <p><span className="font-semibold">Writers:</span> {movie?.writers?.join(', ')}</p>
             </div>
         </div>
         </div>
