@@ -10,8 +10,8 @@ function MovieDetails() {
   const releaseDate = new Date(movie.released).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
 
   const handleImageError = (event) => {
-    event?.target?.onerror = null; // Prevent infinite loop
-    event?.target?.src = '/no-poster.png';
+    event.target.onerror = null; // Prevent infinite loop
+    event.target.src = '/no-poster.png';
   };
 
   return (
